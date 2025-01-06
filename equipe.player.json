@@ -1,0 +1,53 @@
+[{
+  "_id": {
+    "$oid": "6601628d6ae5da6ac74b4edb"
+  },
+  "nom": "hakimi",
+  "number": "2",
+  "age": 21
+},
+{
+  "_id": {
+    "$oid": "6601672a6ae5da6ac74b4edd"
+  },
+  "nom": "diaz",
+  "number": "10",
+  "age": "21",
+  "game": "1"
+},
+{
+  "_id": {
+    "$oid": "66017b826ae5da6ac74b4edf"
+  },
+  "name": "dari",
+  "number": "7",
+  "team": "wac"
+},
+{
+  "_id": {
+    "$oid": "66017ca66ae5da6ac74b4ee0"
+  },
+  "name": "ziyech",
+  "number": "7"
+},
+{
+  "_id": {
+    "$oid": "66017ca66ae5da6ac74b4ee1"
+  },
+  "name": "bilal",
+  "number": "11"
+},
+{
+  "_id": {
+    "$oid": "66017ca66ae5da6ac74b4ee2"
+  },
+  "name": "harit",
+  "number": "8"
+},
+{
+  "_id": {
+    "$oid": "660a78f57364d9eab104ff72"
+  },
+  "name": "akram",
+  "number": "21"
+}]

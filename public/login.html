@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bs-primary: #9926f0; 
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <nav class="bg-purple-600 p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="home.html" class="text-white text-2xl font-bold">TO-DO LIST</a>
+      <div>
+        <a href="home.html" class="text-white hover:text-gray-200 mr-4">Accueil</a>
+        <a href="#faq" class="text-white hover:text-gray-200 mr-3">À propos</a>
+        <a id="loginLink"  class="text-white hover:text-gray-200 mr-3" href="/login.html">Connexion</a>
+        <a id="logoutLink"  class="text-white hover:text-gray-200 mr-3" href="#">Déconnexion</a>
+        
+
+      </div>
+    </div>
+  </nav>
+
+  <div  class="bg-[var(--bs-light)] flex items-center justify-center min-h-screen">
+    
+    <div class="bg-[var(--bs-white)] shadow-lg rounded-lg p-8 max-w-md w-full mt-20">
+      <h1 class="text-2xl font-semibold text-[var(--bs-primary)] text-center mb-6">Connexion</h1>
+      <form id="loginForm" class="space-y-6">
+    
+        <div>
+          <label for="email" class="block text-sm font-medium text-[var(--bs-gray-dark)]">Email</label>
+          <input type="email" id="email" name="email" required
+            class="w-full mt-1 p-3 border border-[var(--bs-gray)] rounded-lg focus:ring-[var(--bs-primary)] focus:border-[var(--bs-primary)]"
+            placeholder="Entrez votre adresse email">
+        </div>
+    
+        <div>
+          <label for="password" class="block text-sm font-medium text-[var(--bs-gray-dark)]">Mot de passe</label>
+          <input type="password" id="password" name="password" required
+            class="w-full mt-1 p-3 border border-[var(--bs-gray)] rounded-lg focus:ring-[var(--bs-primary)] focus:border-[var(--bs-primary)]"
+            placeholder="Entrez votre mot de passe">
+        </div>
+    
+        <button type="submit"
+          class="w-full bg-[var(--bs-primary)] text-[var(--bs-white)] p-3 rounded-lg font-medium hover:bg-[var(--bs-indigo)] transition">
+          Se connecter
+        </button>
+    
+        <p class="text-center text-[var(--bs-gray-dark)] text-sm mt-4">
+          Vous n'avez pas de compte ?
+          <a href="/register" class="text-[var(--bs-primary)] hover:underline">Inscrivez-vous</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const user = {
+    email: document.getElementById('email').value,
+    password: document.getElementById('password').value
+  };
+
+  fetch('/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(user)
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Erreur lors de la connexion');
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log("Réponse du serveur : ", data);  
+    if (data.message === 'Connexion réussie') {
+      alert('Connexion réussie !');
+      window.location.href = '/';  
+    } else {
+      alert('Email ou mot de passe incorrect');
+    }
+  })
+  .catch(error => {
+    console.error("Erreur capturée : ", error);  
+    alert('Email ou mot de passe incorrect');
+  });
+});
+document.addEventListener('DOMContentLoaded', function () {
+  fetch('/auth-status', { credentials: 'include' }) 
+    .then(data => {
+      const loginLink = document.getElementById('loginLink');
+      const logoutLink = document.getElementById('logoutLink');
+
+      if (data.authenticated) {
+        loginLink.style.display = 'none'; // Masquer le lien "Connexion"
+        logoutLink.style.display = 'block'; // Afficher le lien "Déconnexion"
+      } else {
+        loginLink.style.display = 'block'; // Afficher le lien "Connexion"
+        logoutLink.style.display = 'none'; // Masquer le lien "Déconnexion"
+      }
+    })
+    .catch(err => console.error('Erreur lors de la vérification de l\'authentification :', err));
+});
+
+
+document.getElementById('logoutLink').addEventListener('click', function (e) {
+  e.preventDefault();
+
+  fetch('/logout', {
+    method: 'POST',
+    credentials: 'include',
+  })
+    .then(response => {
+      if (response.ok) {
+        alert('Déconnexion réussie');
+        window.location.href = '/login.html'; 
+      } else {
+        alert('Erreur lors de la déconnexion');
+      }
+    })
+    .catch(err => console.error('Erreur lors de la requête de déconnexion :', err));
+});
+
+  </script>
+</body>
+</html>

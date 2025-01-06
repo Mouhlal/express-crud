@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TO-DO</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark menu shadow fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="">
+       TO-DO-LIST
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="home.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">TO-DO</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">faq</a></li>
+          <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a>
+            <li class="nav-item">
+              <a id="loginLink" class="nav-link" href="/login.html">Connexion</a>
+            </li>
+            <li class="nav-item">
+              <a id="logoutLink" class="nav-link" href="#" >Déconnexion</a>
+            </li>
+
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <section id="home" class="intro-section">
+    <div class="container">
+      <div class="row align-items-center text-white">
+        <!-- CONTENU PRINCIPAL POUR LA GESTION DES TÂCHES -->
+        <div class="col-md-6 intros text-start">
+          <h1 class="display-2">
+            <span class="display-2--intro">Bienvenue sur ToDoList</span>
+            <span class="display-2--description lh-base">
+              Organisez vos tâches quotidiennes facilement et efficacement. Avec ToDoList, ajoutez, gérez et suivez vos tâches pour rester productif.
+            </span>
+          </h1>
+          <button type="button" class="rounded-pill btn-rounded">Commencer maintenant
+            <span><i class="fas fa-arrow-right"></i></span>
+          </button>
+        </div>
+        <!-- SECTION ILLUSTRATIVE POUR LA GESTION DES TÂCHES -->
+        <div class="col-md-6 intros text-end">
+          <div class="video-box">
+            <img src="https://camo.githubusercontent.com/28f826663cd0094b29e929b66c6a9bd5a9e6b9fa99f4f61a05a02d17d9a69779/68747470733a2f2f636c69636b75702e636f6d2f626c6f672f77702d636f6e74656e742f75706c6f6164732f323031392f30312f746f2d646f2d6c6973742d617070732d3134303078313035302e706e67" alt="Illustration ToDoList" class="img-fluid">
+            <a href="#" class="glightbox position-absolute top-50 start-50 translate-middle">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ONDE DE SÉPARATION -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,160L48,176C96,192,192,224,288,208C384,192,480,128,576,133.3C672,139,768,213,864,202.7C960,192,1056,96,1152,74.7C1248,53,1344,107,1392,133.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+  </section>
+  
+
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////
+                         START SECTION 4 - THE SERVICES  
+///////////////////////////////////////////////////////////////////////////////////////////////////-->
+<section id="services" class="services">
+  <div class="container">
+    <div class="row text-center">
+      <h1 class="display-3 fw-bold">Fonctionnalités Principales</h1>
+      <div class="heading-line mb-1"></div>
+    </div>
+    <!-- DESCRIPTION GÉNÉRALE -->
+    <div class="row pt-2 pb-2 mt-0 mb-3">
+      <div class="col-md-6 border-right">
+        <div class="bg-white p-3">
+          <h2 class="fw-bold text-capitalize text-center">
+            Gérez vos tâches en toute simplicité
+          </h2>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="bg-white p-4 text-start">
+          <p class="fw-light">
+            Avec ToDoList, organisez vos journées, gérez vos projets et assurez le suivi de vos priorités. 
+            Découvrez des outils simples et intuitifs pour maximiser votre productivité.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENU DES SERVICES -->
+  <div class="container">
+    <!-- GESTION DES TÂCHES -->
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4">
+        <div class="services__content">
+          <div class="icon d-block fas fa-tasks"></div>
+          <h3 class="display-3--title mt-1">Gestion de vos Tâches</h3>
+          <p class="lh-lg">
+            Ajoutez, modifiez ou supprimez vos tâches personnelles en quelques clics. 
+            Organisez-les selon leur priorité et suivez leur avancement avec des statuts personnalisés.
+          </p>
+          <button type="button" class="rounded-pill btn-rounded border-primary">Voir mes tâches
+            <span><i class="fas fa-arrow-right"></i></span>
+          </button>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-end">
+        <div class="services__pic">
+          <img src="https://d57439wlqx3vo.cloudfront.net/iblock/076/076738122a81cd1f0996581318607aae/bea779dd948066ec51b36b03a993ff96.jpg" alt="Gestion des tâches" class="img-fluid">
+        </div>
+      </div>
+    </div>
+    <!-- AJOUTER UNE NOUVELLE TÂCHE -->
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-start">
+        <div class="services__pic">
+          <img src="https://chef-de-projet.fr/wp-content/uploads/2021/07/Logiciels-gestion-des-taches.png" alt="Ajouter une tâche" class="img-fluid">
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4">
+        <div class="services__content">
+          <div class="icon d-block fas fa-plus-circle"></div>
+          <h3 class="display-3--title mt-1">Ajouter une Nouvelle Tâche</h3>
+          <p class="lh-lg">
+            Créez des tâches en ajoutant un titre, une description et une date limite. 
+            Organisez-les facilement et ne manquez plus rien.
+          </p>
+          <button type="button" class="rounded-pill btn-rounded border-primary">Ajouter une tâche
+            <span><i class="fas fa-arrow-right"></i></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- SUIVI DE L'AVANCEMENT -->
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4">
+        <div class="services__content">
+          <div class="icon d-block fas fa-check-circle"></div>
+          <h3 class="display-3--title mt-1">Suivi de l'Avancement</h3>
+          <p class="lh-lg">
+            Suivez l'état d'avancement de chaque tâche, marquez-les comme terminées 
+            et voyez en un clin d'œil ce qu'il reste à accomplir.
+          </p>
+          <button type="button" class="rounded-pill btn-rounded border-primary">Suivre mes tâches
+            <span><i class="fas fa-arrow-right"></i></span>
+          </button>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-end">
+        <div class="services__pic">
+          <img src="https://d34u8crftukxnk.cloudfront.net/slackpress/prod/sites/6/guide-creation-organisation-des-taches.jpg?d=500x500&f=inside" alt="Suivi de l'avancement" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+<section id="faq" class="faq">
+  <div class="container">
+    <div class="row text-center">
+      <h1 class="display-3 fw-bold text-uppercase">FAQ - Questions Fréquentes</h1>
+      <div class="heading-line"></div>
+      <p class="lead">Voici les réponses aux questions fréquemment posées concernant la gestion de vos tâches.</p>
+    </div>
+    <!-- ACCORDION CONTENT  -->
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <div class="accordion" id="accordionExample">
+          <!-- ACCORDION ITEM 1 -->
+          <div class="accordion-item shadow mb-3">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Comment ajouter une nouvelle tâche ?
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                Pour ajouter une tâche, cliquez sur le bouton "Ajouter une tâche" et remplissez les informations nécessaires comme le titre, la description et la priorité.
+              </div>
+            </div>
+          </div>
+          <!-- ACCORDION ITEM 2 -->
+          <div class="accordion-item shadow mb-3">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Puis-je organiser mes tâches par priorité ?
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                Oui, vous pouvez organiser vos tâches par priorité en utilisant les options de filtrage pour afficher les tâches les plus urgentes ou les moins importantes.
+              </div>
+            </div>
+          </div>
+          <!-- ACCORDION ITEM 3 -->
+          <div class="accordion-item shadow mb-3">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Est-ce possible de modifier ou supprimer une tâche ?
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                Oui, vous pouvez facilement modifier ou supprimer une tâche en cliquant sur l'icône correspondante à côté de chaque tâche dans la liste.
+              </div>
+            </div>
+          </div>
+          <!-- ACCORDION ITEM 4 -->
+          <div class="accordion-item shadow mb-3">
+            <h2 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Comment marquer une tâche comme terminée ?
+              </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                Pour marquer une tâche comme terminée, il vous suffit de cocher la case à côté de la tâche dans la liste. La tâche sera automatiquement déplacée dans la section "Terminées".
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<footer class="footer">
+  <!-- START THE SOCIAL MEDIA CONTENT -->
+  <div class="footer-sm" style="background-color: #212121;">
+    <div class="container">
+      <div class="row py-4 text-center text-white">
+        <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
+          Connectez-vous avec nous sur les réseaux sociaux
+        </div>
+        <div class="col-lg-7 col-md-6">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- START THE CONTENT FOR THE COMPANY INFO -->
+  <div class="container mt-5">
+    <div class="row text-white justify-content-center mt-3 pb-3">
+      <div class="col-12 col-sm-6 col-lg-6 mx-auto">
+        <h5 class="text-capitalize fw-bold">ToDoList</h5>
+        <hr class="bg-white d-inline-block mb-4" style="width: 60px; height: 2px;">
+        <p class="lh-lg">
+          ToDoList est une application simple et efficace pour gérer vos tâches quotidiennes. Organisez vos projets, suivez vos tâches et atteignez vos objectifs de manière productive et intuitive.
+        </p>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-2 mb-4 mx-auto">
+        <h5 class="text-capitalize fw-bold">Fonctionnalités</h5>
+        <hr class="bg-white d-inline-block mb-4" style="width: 60px; height: 2px;">
+        <ul class="list-inline campany-list">
+          <li><a href="#">Ajouter une tâche</a></li>
+          <li><a href="#">Modifier une tâche</a></li>
+          <li><a href="#">Supprimer une tâche</a></li>
+          <li><a href="#">Voir les tâches complètes</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-2 mb-4 mx-auto">
+        <h5 class="text-capitalize fw-bold">Liens Utiles</h5>
+        <hr class="bg-white d-inline-block mb-4" style="width: 60px; height: 2px;">
+        <ul class="list-inline campany-list">
+          <li><a href="#">Mon compte</a></li>
+          <li><a href="#">S'inscrire</a></li>
+          <li><a href="#">Aide</a></li>
+          <li><a href="#">Paramètres</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-2 mb-4 mx-auto">
+        <h5 class="text-capitalize fw-bold">Contact</h5>
+        <hr class="bg-white d-inline-block mb-4" style="width: 60px; height: 2px;">
+        <ul class="list-inline campany-list">
+          <li><a href="#">Contactez-nous</a></li>
+          <li><a href="#">Support technique</a></li>
+          <li><a href="#">Partenariats</a></li>
+          <li><a href="#">À propos</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- START THE COPYRIGHT INFO -->
+  <div class="footer-bottom pt-5 pb-5">
+    <div class="container">
+      <div class="row text-center text-white">
+        <div class="col-12">
+          <div class="footer-bottom__copyright">
+            &COPY; Copyright 2025 <a href="#">ToDoList</a> | Créé par <a href="http://codewithpatrick.com" target="_blank">Muriungi</a><br><br>
+            Distribué par <a href="http://themewagon.com" target="_blank">ThemeWagon</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+<!-- BACK TO TOP BUTTON  -->
+<a href="#" class="shadow btn-primary rounded-circle back-to-top">
+  <i class="fas fa-chevron-up"></i>
+</a>
+
+
+
+   
+    <script src="assets/vendors/js/glightbox.min.js"></script>
+
+    <script type="text/javascript">
+      const lightbox = GLightbox({
+        'touchNavigation': true,
+        'href': 'https://www.youtube.com/watch?v=J9lS14nM1xg',
+        'type': 'video',
+        'source': 'youtube', //vimeo, youtube or local
+        'width': 900,
+        'autoPlayVideos': 'true',
+});
+    
+    </script>
+     <script src="assets/js/bootstrap.bundle.min.js"></script>
+     <script>
+     document.addEventListener('DOMContentLoaded', function () {
+  fetch('/auth-status', { credentials: 'include' }) // Inclure les cookies pour vérifier l'authentification
+    .then(response => response.json())
+    .then(data => {
+      const loginLink = document.getElementById('loginLink');
+      const logoutLink = document.getElementById('logoutLink');
+
+      if (data.authenticated) {
+        loginLink.style.display = 'none'; // Masquer le lien "Connexion"
+        logoutLink.style.display = 'block'; // Afficher le lien "Déconnexion"
+      } else {
+        loginLink.style.display = 'block'; // Afficher le lien "Connexion"
+        logoutLink.style.display = 'none'; // Masquer le lien "Déconnexion"
+      }
+    })
+    .catch(err => console.error('Erreur lors de la vérification de l\'authentification :', err));
+});
+
+// Gestion de la déconnexion
+document.getElementById('logoutLink').addEventListener('click', function (e) {
+  e.preventDefault();
+
+  fetch('/logout', {
+    method: 'POST',
+    credentials: 'include',
+  })
+    .then(response => {
+      if (response.ok) {
+        alert('Déconnexion réussie');
+        window.location.href = '/login.html'; // Rediriger vers la page de connexion
+      } else {
+        alert('Erreur lors de la déconnexion');
+      }
+    })
+    .catch(err => console.error('Erreur lors de la requête de déconnexion :', err));
+});
+
+
+     </script>
+</body>
+</html>

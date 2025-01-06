@@ -1,0 +1,14 @@
+[
+    {
+        "id" : 1,
+        "nom" : "Real"
+    },
+    {
+        "id" : 2,
+        "nom" : "Barca"
+    },
+    {
+        "id" : 3,
+        "nom" : "Liverpool"
+    }
+]
