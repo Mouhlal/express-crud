@@ -8,7 +8,7 @@ const app = express();
 const PORT = 3000;
 const DATA_FILE = path.join(__dirname, 'data.json'); 
 require('dotenv').config();
-app.set('view engine', 'ejs');
+app.set("view engine", "ejs");
 
 
 
@@ -51,7 +51,7 @@ app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'login.html'));
 });
 
-// Login
+
 app.post('/login', (req, res) => {
   const { email, password } = req.body;
 
@@ -66,15 +66,13 @@ app.post('/login', (req, res) => {
     if (!user) {
       return res.status(401).json({ error: 'Identifiants incorrects' });
     }
-
-    // Stocker l'utilisateur dans la session
     req.session.userId = user.id;
-    res.json({ message: 'Connexion réussie', userId: user.id }); // S'assurer que ce format est envoyé
+    res.json({ message: 'Connexion réussie', userId: user.id }); 
   });
 });
 
 
-// Logout
+
 app.post('/logout', (req, res) => {
   req.session.destroy((err) => {
     if (err) {
@@ -87,13 +85,14 @@ app.post('/logout', (req, res) => {
 app.get('/auth-status', (req, res) => {
   if (req.session && req.session.user) {
     res.json({ authenticated: true });
+    console.log(req.session.user);
   } else {
     res.json({ authenticated: false });
+    
   }
 });
 
 
-// Enregistrement d'un nouvel utilisateur
 app.post('/register', (req, res) => {
   const { username, email, password } = req.body;
 
@@ -128,7 +127,6 @@ app.post('/register', (req, res) => {
   });
 });
 
-// Vérifier si l'utilisateur est connecté
 function checkAuth(req, res, next) {
   if (!req.session.userId) {
     return res.status(401).json({ error: 'Utilisateur non connecté' });
@@ -136,17 +134,17 @@ function checkAuth(req, res, next) {
   next();
 }
 
-app.get("/dashboard", (req, res) => {
+app.get('/dashboard', (req, res) => {
   if (!req.session.user) {
     return res.redirect("/");
   }
+
   res.render("dashboard", { user: req.session.user });
 });
 
-// Lecture des tâches de l'utilisateur connecté
 app.post('/tasks', checkAuth, (req, res) => {
   const newTask = req.body;
-  newTask.status = newTask.status || "à faire"; // Ajouter un statut par défaut
+  newTask.status = newTask.status || "à faire"; 
 
   fs.readFile(DATA_FILE, 'utf8', (err, data) => {
     if (err) {
@@ -168,12 +166,11 @@ app.post('/tasks', checkAuth, (req, res) => {
         return res.status(500).json({ error: 'Erreur lors de l\'ajout de la tâche' });
       }
 
-      return res.status(201).json(newTask);  // Utilisez `return` pour éviter d'exécuter la suite du code
+      return res.status(201).json(newTask); 
     });
   });
 });
 
-// Modifier une tâche de l'utilisateur connecté (notamment le statut)
 app.put('/tasks/:id', checkAuth, (req, res) => {
   const taskId = parseInt(req.params.id, 10);
   const updatedTask = req.body;
@@ -195,7 +192,6 @@ app.put('/tasks/:id', checkAuth, (req, res) => {
       return res.status(404).json({ error: 'Tâche non trouvée' });
     }
 
-    // Mettre à jour la tâche (notamment le statut)
     user.tasks[taskIndex] = { ...user.tasks[taskIndex], ...updatedTask };
 
     fs.writeFile(DATA_FILE, JSON.stringify({ users }, null, 2), err => {
@@ -208,7 +204,6 @@ app.put('/tasks/:id', checkAuth, (req, res) => {
   });
 });
 
-// Suppression d'une tâche de l'utilisateur connecté
 app.delete('/tasks/:id', checkAuth, (req, res) => {
   const taskId = parseInt(req.params.id, 10);
 
@@ -231,7 +226,7 @@ app.delete('/tasks/:id', checkAuth, (req, res) => {
         return res.status(500).json({ error: 'Erreur lors de l\'écriture des tâches' });
       }
 
-      return res.status(204).end();  // Utilisez `return` pour éviter l'exécution suivante
+      return res.status(204).end();  
     });
   });
 });

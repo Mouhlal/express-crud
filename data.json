@@ -56,11 +56,6 @@
           "name": "dd",
           "status": "En cours",
           "id": 1736105582454
-        },
-        {
-          "id": 1736106686026,
-          "name": "faire mom",
-          "status": "En cours"
         }
       ]
     },
@@ -106,7 +101,13 @@
       "username": "yassine",
       "email": "yassine@gmail.com",
       "password": "yassine",
-      "tasks": []
+      "tasks": [
+        {
+          "name": "Mouhlal Akram",
+          "status": "À faire",
+          "id": 1736133341779
+        }
+      ]
     },
     {
       "id": 1736097761887,
@@ -178,6 +179,13 @@
           "id": 1736127872993
         }
       ]
+    },
+    {
+      "id": 1736133258451,
+      "username": "b",
+      "email": "akramemouhlal@gmail.com",
+      "password": "y4h$rc54?hf9R5Gb",
+      "tasks": []
     }
   ]
 }

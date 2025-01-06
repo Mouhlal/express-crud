@@ -16,14 +16,13 @@
 <body class="bg-gray-100">
   <nav class="bg-purple-600 p-4 shadow-md">
     <div class="container mx-auto flex justify-between items-center">
-      <a href="home.html" class="text-white text-2xl font-bold">TO-DO LIST</a>
-      <div>
-        <a href="home.html" class="text-white hover:text-gray-200 mr-4">Accueil</a>
+      <a href="/home.html" class="text-white text-2xl font-bold">TO-DO LIST</a>
+      <div class="flex items-center">
+        <a href="/" class="text-white hover:text-gray-200 mr-4">Accueil</a>
         <a href="#faq" class="text-white hover:text-gray-200 mr-3">À propos</a>
-        <a id="loginLink"  class="text-white hover:text-gray-200 mr-3" href="/login.html">Connexion</a>
-        <a id="logoutLink"  class="text-white hover:text-gray-200 mr-3" href="#">Déconnexion</a>
-        
-
+        <!-- Dynamically change the link depending on the user status -->
+        <a id="loginLink" href="/login" class="text-white hover:text-gray-200 mr-3">Connexion</a>
+        <a id="logoutLink" href="#" class="text-white hover:text-gray-200 mr-3">Déconnexion</a>
       </div>
     </div>
   </nav>
@@ -186,43 +185,47 @@
     });
   
     document.addEventListener('DOMContentLoaded', displayTasks);
-
-   document.addEventListener('DOMContentLoaded', function () {
-  fetch('/auth-status', { credentials: 'include' }) 
-    .then(response => response.json())
-    .then(data => {
-      const loginLink = document.getElementById('loginLink');
-      const logoutLink = document.getElementById('logoutLink');
-
-      if (data.authenticated) {
-        loginLink.style.display = 'none'; // Masquer Connexion
-        logoutLink.style.display = 'block'; // Afficher Déconnexion
-      } else {
-        loginLink.style.display = 'block'; // Afficher Connexion
-        logoutLink.style.display = 'none'; // Masquer Déconnexion
-      }
-    })
-    .catch(err => console.error('Erreur lors de la vérification de l\'authentification :', err));
-});
-
-document.getElementById('logoutLink').addEventListener('click', function (e) {
-  e.preventDefault();
-
-  fetch('/logout', {
-    method: 'POST',
-    credentials: 'include',
-  })
-    .then(response => {
-      if (response.ok) {
-        alert('Déconnexion réussie');
-        window.location.href = '/login.html'; 
-      } else {
-        alert('Erreur lors de la déconnexion');
-      }
-    })
-    .catch(err => console.error('Erreur lors de la requête de déconnexion :', err));
-});
-
+  </script>
+  <script>
+    // Gestion de l'état de la session pour afficher les liens de connexion/déconnexion
+    document.addEventListener('DOMContentLoaded', function () {
+      fetch('/auth-status', { credentials: 'include' }) 
+        .then(response => response.json())
+        .then(data => {
+          const loginLink = document.getElementById('loginLink');
+          const logoutLink = document.getElementById('logoutLink');
+  
+          if (data.authenticated) {
+            // Si l'utilisateur est authentifié, afficher "Déconnexion" et masquer "Connexion"
+            loginLink.style.display = 'none';
+            logoutLink.style.display = 'inline';
+          } else {
+            // Si l'utilisateur n'est pas authentifié, afficher "Connexion" et masquer "Déconnexion"
+            loginLink.style.display = 'inline';
+            logoutLink.style.display = 'none';
+          }
+        })
+        .catch(err => console.error('Erreur lors de la vérification de l\'authentification :', err));
+    });
+  
+    // Logique pour la déconnexion
+    document.getElementById('logoutLink').addEventListener('click', function (e) {
+      e.preventDefault();
+  
+      fetch('/logout', {
+        method: 'POST',
+        credentials: 'include',
+      })
+        .then(response => {
+          if (response.ok) {
+            alert('Déconnexion réussie');
+            window.location.href = '/login';  // Rediriger vers la page de connexion
+          } else {
+            alert('Erreur lors de la déconnexion');
+          }
+        })
+        .catch(err => console.error('Erreur lors de la requête de déconnexion :', err));
+    });
   </script>
   
 </body>

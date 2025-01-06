@@ -1,5 +1,4 @@
 const API_URL = 'http://localhost:3000/tasks';
-app.set('view engine', 'ejs');
 
 function displayTasks() {
   fetch(API_URL)
