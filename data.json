@@ -1,42 +1,6 @@
 {
   "users": [
     {
-      "id": 1,
-      "username": "admin",
-      "email": "admin@example.com",
-      "password": "admin123",
-      "tasks": [
-        {
-          "id": 1,
-          "name": "Finaliser le projet",
-          "status": "en cours"
-        },
-        {
-          "id": 2,
-          "name": "Réviser le code",
-          "status": "à faire"
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "username": "user1",
-      "email": "user@gmail.com",
-      "password": "user123",
-      "tasks": [
-        {
-          "id": 3,
-          "name": "Acheter des courses",
-          "status": "terminée"
-        },
-        {
-          "id": 4,
-          "name": "Appeler le docteur",
-          "status": "en cours"
-        }
-      ]
-    },
-    {
       "id": 1736088786405,
       "username": "Akram Mouhlal",
       "email": "akram@gmail.com",
@@ -49,116 +13,18 @@
         },
         {
           "id": 1736097689088,
-          "name": "sdvd",
+          "name": "wc1937",
           "status": "En cours"
         },
         {
-          "name": "dd",
-          "status": "En cours",
-          "id": 1736105582454
-        }
-      ]
-    },
-    {
-      "id": 1736089208467,
-      "username": "saad",
-      "email": "saad@gmail.com",
-      "password": "saad",
-      "tasks": [
-        {
-          "id": 1736089261770,
-          "name": "Faire Tp",
-          "status": "à faire"
+          "name": "tst",
+          "status": "Terminée",
+          "id": 1736201383915
         },
         {
-          "id": 1736089438413,
-          "name": "d"
-        },
-        {
-          "name": "faire td",
-          "status": "en cours",
-          "id": 1736089719896
-        },
-        {
-          "id": 1736092143545,
-          "name": "Aksk",
-          "status": "À faire"
-        },
-        {
-          "id": 1736092160731,
-          "name": "yassine",
-          "status": "À faire"
-        },
-        {
-          "id": 1736092309231,
-          "name": "Faire ToDO",
-          "status": "En cours"
-        }
-      ]
-    },
-    {
-      "id": 1736093567197,
-      "username": "yassine",
-      "email": "yassine@gmail.com",
-      "password": "yassine",
-      "tasks": [
-        {
-          "name": "Mouhlal Akram",
+          "name": "cpp",
           "status": "À faire",
-          "id": 1736133341779
-        }
-      ]
-    },
-    {
-      "id": 1736097761887,
-      "username": "mehdi",
-      "email": "mehdi@gmailcom",
-      "password": "mehdi\"\"",
-      "tasks": [
-        {
-          "id": 1736097805587,
-          "name": "millionaire",
-          "status": "En cours"
-        }
-      ]
-    },
-    {
-      "id": 1736102705147,
-      "username": "nn",
-      "email": "nn@gmail.com",
-      "password": "nn",
-      "tasks": []
-    },
-    {
-      "id": 1736105622092,
-      "username": "zoro",
-      "email": "zoro@gmail.com",
-      "password": "zoro",
-      "tasks": [
-        {
-          "id": 1736105686513,
-          "name": "mama",
-          "status": "À faire"
-        },
-        {
-          "id": 1736105847092,
-          "name": "fff",
-          "status": "Terminée"
-        },
-        {
-          "id": 1736106026299,
-          "name": "afri",
-          "status": "En cours"
-        },
-        {
-          "name": "afri",
-          "status": "En cours",
-          "id": 1736106026317
-        },
-        {
-          "id": 1736106121723,
-          "name": "map",
-          "status": "Terminée"
+          "id": 1736201479274
         }
       ]
     },
@@ -169,22 +35,55 @@
       "password": "mouhlal",
       "tasks": [
         {
-          "name": "Faire Td Lunix",
+          "name": "WAC37",
           "status": "Terminée",
-          "id": 1736127618249
+          "id": 1736436670066
         },
         {
-          "name": "Symfony project",
-          "status": "En cours",
-          "id": 1736127872993
+          "name": "WINNERS-2005",
+          "status": "Terminée",
+          "id": 1736467578335
         }
       ]
     },
     {
-      "id": 1736133258451,
-      "username": "b",
-      "email": "akramemouhlal@gmail.com",
-      "password": "y4h$rc54?hf9R5Gb",
+      "id": 1736434736080,
+      "username": "lokman",
+      "email": "lokman@gmail.com",
+      "password": "lokman",
+      "tasks": [
+        {
+          "name": "WN05",
+          "status": "Terminée",
+          "id": 1736434754202
+        }
+      ]
+    },
+    {
+      "id": 1736466738539,
+      "username": "amir",
+      "email": "amir@gmail.com",
+      "password": "amir",
+      "tasks": [
+        {
+          "name": "ww",
+          "status": "À faire",
+          "id": 1736467995561
+        }
+      ]
+    },
+    {
+      "id": 1736466776699,
+      "username": "zz",
+      "email": "zz@gmail.com",
+      "password": "zz",
+      "tasks": []
+    },
+    {
+      "id": 1736466828687,
+      "username": "bb",
+      "email": "bb@gmail.com",
+      "password": "bb",
       "tasks": []
     }
   ]

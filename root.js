@@ -7,8 +7,8 @@ const session = require('express-session');
 const app = express();
 const PORT = 3000;
 const DATA_FILE = path.join(__dirname, 'data.json'); 
+
 require('dotenv').config();
-app.set("view engine", "ejs");
 
 
 
@@ -22,6 +22,28 @@ app.use(session({
 
 app.use(express.static('public'));
 app.use(bodyParser.json());
+
+
+app.get('/register', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'register.html'));
+});
+
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'login.html'));
+});
+
+app.get('/home', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'home.html'));
+});
+
+app.get('/dashboard', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'dashboard.html'));
+});
+
+app.get('/tab', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'Tab.html'));
+});
+
 
 
 app.get('/tasks', checkAuth, (req, res) => {
@@ -41,15 +63,6 @@ app.get('/tasks', checkAuth, (req, res) => {
   });
 });
 
-
-
-app.get('/register', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'register.html'));
-});
-
-app.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'login.html'));
-});
 
 
 app.post('/login', (req, res) => {
@@ -134,13 +147,7 @@ function checkAuth(req, res, next) {
   next();
 }
 
-app.get('/dashboard', (req, res) => {
-  if (!req.session.user) {
-    return res.redirect("/");
-  }
 
-  res.render("dashboard", { user: req.session.user });
-});
 
 app.post('/tasks', checkAuth, (req, res) => {
   const newTask = req.body;

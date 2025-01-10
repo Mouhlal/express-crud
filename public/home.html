@@ -15,7 +15,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark menu shadow fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="">
+      <a class="navbar-brand" href="/home">
        TO-DO-LIST
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,10 +23,10 @@
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link active" aria-current="page" href="home.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html">TO-DO</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="/home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/">TO-DO</a></li>
           <li class="nav-item"><a class="nav-link" href="#faq">faq</a></li>
-          <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a>
+          <li class="nav-item"><a class="nav-link" href="/dashboard">Dashboard</a>
             <li class="nav-item">
               <a id="loginLink" class="nav-link" href="/login.html">Connexion</a>
             </li>
@@ -52,9 +52,11 @@
               Organisez vos tâches quotidiennes facilement et efficacement. Avec ToDoList, ajoutez, gérez et suivez vos tâches pour rester productif.
             </span>
           </h1>
-          <button type="button" class="rounded-pill btn-rounded">Commencer maintenant
-            <span><i class="fas fa-arrow-right"></i></span>
-          </button>
+          <a href="/">
+            <button type="button" class="rounded-pill btn-rounded">Commencer maintenant
+              <span><i class="fas fa-arrow-right"></i></span>
+            </button>
+          </a>
         </div>
         <!-- SECTION ILLUSTRATIVE POUR LA GESTION DES TÂCHES -->
         <div class="col-md-6 intros text-end">
@@ -242,9 +244,9 @@
 
 
 
-<footer class="footer">
+<footer style="background-image: url('https://wallpapers.com/images/featured/moon-mqcx9pq0fg2ma4lp.jpg')" class="footer">
   <!-- START THE SOCIAL MEDIA CONTENT -->
-  <div class="footer-sm" style="background-color: #212121;">
+  <div class="footer-sm" >
     <div class="container">
       <div class="row py-4 text-center text-white">
         <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
@@ -262,7 +264,7 @@
   </div>
 
   <!-- START THE CONTENT FOR THE COMPANY INFO -->
-  <div class="container mt-5">
+  <div  class="container mt-5">
     <div class="row text-white justify-content-center mt-3 pb-3">
       <div class="col-12 col-sm-6 col-lg-6 mx-auto">
         <h5 class="text-capitalize fw-bold">ToDoList</h5>
@@ -292,26 +294,25 @@
         </ul>
       </div>
       <div class="col-12 col-sm-6 col-lg-2 mb-4 mx-auto">
-        <h5 class="text-capitalize fw-bold">Contact</h5>
+        <h5 style="color: black;" class="text-capitalize fw-bold">Contact</h5>
         <hr class="bg-white d-inline-block mb-4" style="width: 60px; height: 2px;">
         <ul class="list-inline campany-list">
-          <li><a href="#">Contactez-nous</a></li>
-          <li><a href="#">Support technique</a></li>
-          <li><a href="#">Partenariats</a></li>
-          <li><a href="#">À propos</a></li>
+          <li><a style="color: black;" href="#">Contactez-nous</a></li>
+          <li><a style="color: black;" href="#">Support technique</a></li>
+          <li><a style="color: black;" href="#">Partenariats</a></li>
+          <li><a style="color: black;" href="#">À propos</a></li>
         </ul>
       </div>
     </div>
   </div>
 
   <!-- START THE COPYRIGHT INFO -->
-  <div class="footer-bottom pt-5 pb-5">
+  <div style="background-image: url('https://wallpapers.com/images/featured/moon-mqcx9pq0fg2ma4lp.jpg')" class="footer-bottom pt-3 pb-3">
     <div class="container">
       <div class="row text-center text-white">
         <div class="col-12">
           <div class="footer-bottom__copyright">
-            &COPY; Copyright 2025 <a href="#">ToDoList</a> | Créé par <a href="http://codewithpatrick.com" target="_blank">Muriungi</a><br><br>
-            Distribué par <a href="http://themewagon.com" target="_blank">ThemeWagon</a>
+            &COPY; Copyright 2025 <a href="#">ToDoList</a><br><br>
           </div>
         </div>
       </div>
@@ -322,7 +323,7 @@
 
 
 <!-- BACK TO TOP BUTTON  -->
-<a href="#" class="shadow btn-primary rounded-circle back-to-top">
+<a href="#" style="background-image: url('https://wallpapers.com/images/featured/moon-mqcx9pq0fg2ma4lp.jpg')" class="shadow btn-primary rounded-circle back-to-top">
   <i class="fas fa-chevron-up"></i>
 </a>
 
@@ -331,38 +332,26 @@
    
     <script src="assets/vendors/js/glightbox.min.js"></script>
 
-    <script type="text/javascript">
-      const lightbox = GLightbox({
-        'touchNavigation': true,
-        'href': 'https://www.youtube.com/watch?v=J9lS14nM1xg',
-        'type': 'video',
-        'source': 'youtube', //vimeo, youtube or local
-        'width': 900,
-        'autoPlayVideos': 'true',
-});
-    
-    </script>
      <script src="assets/js/bootstrap.bundle.min.js"></script>
      <script>
      document.addEventListener('DOMContentLoaded', function () {
-  fetch('/auth-status', { credentials: 'include' }) // Inclure les cookies pour vérifier l'authentification
+  fetch('/auth-status', { credentials: 'include' }) 
     .then(response => response.json())
     .then(data => {
       const loginLink = document.getElementById('loginLink');
       const logoutLink = document.getElementById('logoutLink');
 
       if (data.authenticated) {
-        loginLink.style.display = 'none'; // Masquer le lien "Connexion"
-        logoutLink.style.display = 'block'; // Afficher le lien "Déconnexion"
+        loginLink.style.display = 'none'; 
+        logoutLink.style.display = 'block'; 
       } else {
-        loginLink.style.display = 'block'; // Afficher le lien "Connexion"
-        logoutLink.style.display = 'none'; // Masquer le lien "Déconnexion"
+        loginLink.style.display = 'block'; 
+        logoutLink.style.display = 'none'; 
       }
     })
     .catch(err => console.error('Erreur lors de la vérification de l\'authentification :', err));
 });
 
-// Gestion de la déconnexion
 document.getElementById('logoutLink').addEventListener('click', function (e) {
   e.preventDefault();
 
@@ -373,7 +362,7 @@ document.getElementById('logoutLink').addEventListener('click', function (e) {
     .then(response => {
       if (response.ok) {
         alert('Déconnexion réussie');
-        window.location.href = '/login.html'; // Rediriger vers la page de connexion
+        window.location.href = '/login'; 
       } else {
         alert('Erreur lors de la déconnexion');
       }

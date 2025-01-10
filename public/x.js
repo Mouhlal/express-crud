@@ -17,31 +17,27 @@ function displayTasks() {
     .catch(error => console.error('Erreur:', error));
 }
 
-// Récupérer les tâches à afficher lors du chargement de la page
 document.addEventListener('DOMContentLoaded', displayTasks);
 
-// Fonction pour modifier une tâche
 function editTask(id) {
   const newTaskName = prompt('Modifier la tâche :');
   if (newTaskName) {
     fetch(`${API_URL}/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ id, name: newTaskName, status: 'à faire' }) // Vous pouvez ajuster la logique ici pour choisir le statut
+      body: JSON.stringify({ id, name: newTaskName, status: 'à faire' }) 
     })
     .then(() => displayTasks())
     .catch(error => console.error('Erreur lors de la modification de la tâche:', error));
   }
 }
 
-// Fonction pour supprimer une tâche
 function deleteTask(id) {
   fetch(`${API_URL}/${id}`, { method: 'DELETE' })
     .then(() => displayTasks())
     .catch(error => console.error('Erreur lors de la suppression de la tâche:', error));
 }
 
-// Ajouter une nouvelle tâche
 document.getElementById('taskForm').addEventListener('submit', function (e) {
   e.preventDefault();
   const taskName = document.getElementById('taskName').value;
