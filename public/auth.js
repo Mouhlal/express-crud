@@ -1,6 +1,4 @@
-
-   
-    document.getElementById('registerForm').addEventListener('submit', function (e) {
+ document.getElementById('registerForm').addEventListener('submit', function (e) {
         e.preventDefault();
   
         const user = {

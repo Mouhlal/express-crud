@@ -85,6 +85,20 @@
       "email": "bb@gmail.com",
       "password": "bb",
       "tasks": []
+    },
+    {
+      "id": 1736498529739,
+      "username": "sadafi",
+      "email": "sadafi@gmail.com",
+      "password": "sadafi",
+      "tasks": []
+    },
+    {
+      "id": 1736502201042,
+      "username": "test",
+      "email": "test@gmail.com",
+      "password": "test",
+      "tasks": []
     }
   ]
 }
